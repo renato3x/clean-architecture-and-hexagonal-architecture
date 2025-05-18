@@ -31,4 +31,9 @@ export class TerminalUtils {
   static keyValue(key: string, value: string) {
     terminal.blue(`${key}: `).green(value).white('\n');
   }
+
+  static async waitForEnter() {
+    terminal.white('\n Press enter to continue');
+    await terminal.inputField({ echo: false }).promise;
+  }
 }

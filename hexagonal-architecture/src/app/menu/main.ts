@@ -14,7 +14,7 @@ export async function mainMenu() {
     case 0:
       await fundamentalsMenu();
       break;
-    case 1:
+    default:
       process.exit(0);
   }
 
