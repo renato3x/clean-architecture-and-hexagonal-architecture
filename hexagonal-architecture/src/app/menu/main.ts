@@ -1,4 +1,4 @@
-import { TerminalUtils } from '@/util/terminal';
+import { TerminalUtils } from '@/app/util/terminal';
 import { terminal } from 'terminal-kit';
 import { fundamentalsMenu } from './fundamentals';
 

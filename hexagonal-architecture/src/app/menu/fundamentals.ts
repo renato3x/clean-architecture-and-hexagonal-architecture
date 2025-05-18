@@ -1,5 +1,6 @@
-import { TerminalUtils } from "@/util/terminal";
+import { TerminalUtils } from "@/app/util/terminal";
 import { terminal } from "terminal-kit";
+import { polymorphism } from "../fundamentals/polymorphism";
 
 export async function fundamentalsMenu() {
   TerminalUtils.title('Fundamentals');
@@ -10,6 +11,9 @@ export async function fundamentalsMenu() {
   ]).promise;
 
   switch(response.selectedIndex) {
+    case 0:
+      await polymorphism();
+      break;
     case 1:
       return;
   }
