@@ -27,4 +27,8 @@ export class TerminalUtils {
     const response = await terminal.singleLineMenu(options).promise;
     return [response.selectedIndex, response.selectedText];
   }
+
+  static keyValue(key: string, value: string) {
+    terminal.blue(`${key}: `).green(value).white('\n');
+  }
 }
