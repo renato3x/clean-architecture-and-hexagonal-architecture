@@ -33,7 +33,26 @@ export class TerminalUtils {
   }
 
   static async waitForEnter() {
-    terminal.white('\n Press enter to continue');
+    terminal.white('\nPress enter to continue');
     await terminal.inputField({ echo: false }).promise;
+  }
+
+  static async requiredField(label: string, defaultValue = ''): Promise<string> {
+    terminal.yellow(`\n${label}`);
+    const response = await terminal.inputField({ default: defaultValue }).promise;
+
+    if (response) {
+      return response;
+    }
+
+    return await this.requiredField(label);
+  }
+
+  static async success(message: string) {
+    terminal.green(`\n${message}`);
+  }
+
+  static async error(message: string) {
+    terminal.red(`\n${message}`);
   }
 }
